@@ -1,5 +1,5 @@
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/clustertabnet)](https://api.reuse.software/info/github.com/SAP-samples/clustertabnet)
 # ClusterTabNet: Supervised clustering method for table detection and table structure recognition
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/clustertabnet)](https://api.reuse.software/info/github.com/SAP-samples/clustertabnet)
 
 ## Description
 Implementation of the table detection and table structure recognition deep learning model described in the paper "ClusterTabNet: Supervised clustering method for table detection and table structure recognition" https://arxiv.org/abs/2402.07502
