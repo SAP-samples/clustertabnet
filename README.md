@@ -1,37 +1,21 @@
-# SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and .reuse/dep5. All repositories on github.com/SAP-samples will be created based on this template.
-
-# Containing Files
-
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
-
-2. The .reuse/dep5 file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the .reuse/dep5 in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
-
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
-
-# [Title]
-<!-- Please include descriptive title -->
-
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/clustertabnet)](https://api.reuse.software/info/github.com/SAP-samples/clustertabnet)
+# ClusterTabNet: Supervised clustering method for table detection and table structure recognition
 
 ## Description
-<!-- Please include SEO-friendly description -->
+Implementation of the table detection and table structure recognition deep learning model described in the paper "ClusterTabNet: Supervised clustering method for table detection and table structure recognition" https://arxiv.org/abs/2402.07502
 
 ## Requirements
+The requirements are detailed in the `requirements.txt` file
 
 ## Download and Installation
+Download datasets PubTables-1M, pubtabnet, fintabnet, synthtabnet, icdar2019 and format them using notebooks in the `train_data_preparation` folder.
 
-## Known Issues
-<!-- You may simply state "No known issues. -->
+To run the evaluation and further training you can call:
+```CUDA_VISIBLE_DEVICES=0 python train/table_extraction.py --output_dir=OUTPUT_DIRECTORY -t=both --ocr_labels_folder=ocr --learning_rate=0.00001 --is_use_4_points --is_use_image_patches --use_dox_datasets --eval_set='test' --checkpoint_path=model_weights/table_recognition.pth```
 
 ## How to obtain support
 [Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
- 
+
 For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
 ## Contributing
