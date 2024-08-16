@@ -8,6 +8,8 @@ Implementation of the table detection and table structure recognition deep learn
 The requirements are detailed in the `requirements.txt` file
 
 ## Download and Installation
+For sample inference and training, please check out the jupyter notebook: `demo.ipynb`
+
 Download datasets PubTables-1M, pubtabnet, fintabnet, synthtabnet, icdar2019 and format them using notebooks in the `train_data_preparation` folder.
 
 To run the evaluation and further training you can call: <br />

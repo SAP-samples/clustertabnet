@@ -307,7 +307,7 @@ def draw_rectangles(word_boxes, pred_boxes, pred_classes, target,
                                        crop_size=crop_size)
 
     tables = {'tables': []}
-    is_save_acc = False
+    is_save_acc = True
     for mask_idx, predicted_table_rect in zip(pred_classes, pred_boxes):
         tables['tables'].append({'bbox': np.asarray(predicted_table_rect).reshape(2, 2).tolist(), 'class': table_class_map[mask_idx]})
 
@@ -456,7 +456,7 @@ def validate(model,
             word_boxes.cpu().numpy(), all_passing_masks, all_passing_masks_weak,
             all_passing_masks_probs, image_size.cpu().numpy(), is_use_connected_components)
 
-        if is_save and any([acc < 1 for acc in accuracies_per_head]):
+        if is_save:
             draw_rectangles(word_boxes, pred_boxes, pred_classes, target,
                             accuracies_per_head, perspective_transform,
                             output_dir, is_augment_in_eval=is_augment_in_eval,
@@ -748,7 +748,7 @@ def main(output_dir,
                                          output_dir,
                                          is_use_4_points=is_use_4_points,
                                          is_run_4_5_classes=False,
-                                         is_debug_plot=False,
+                                         is_debug_plot=True,
                                          is_augment_in_eval=is_augment_in_eval)
 
     train_iterator = iter(train_loader)
